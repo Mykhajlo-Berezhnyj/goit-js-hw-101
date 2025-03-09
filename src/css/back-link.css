@@ -1,10 +1,21 @@
 .back-link {
   position: relative;
   display: inline-block;
+  max-width: 100px;
   padding: 4px 8px;
   margin-top: 32px;
   border: 1px solid;
-  border-radius: 8px;
+  border-radius: 10px;
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out;
+  background: linear-gradient(
+    130deg,
+    rgb(189, 52, 254, 0.8) 30%,
+    rgb(65, 209, 255, 0.8)
+  );
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: 20px;
 }
 .back-link::before {
   content: '';
@@ -26,4 +37,15 @@
 .back-link:hover::before {
   opacity: 1;
   animation-play-state: running;
+}
+
+.back-link:hover {
+  font-weight: bold;
+  transition: transform 0.5s ease-in-out;
+  transform: scale(1.05);
+  background-color: linear-gradient(
+    130deg,
+    rgb(65, 209, 255, 0.9) 30%,
+    rgb(189, 52, 254, 0.9)
+  );
 }

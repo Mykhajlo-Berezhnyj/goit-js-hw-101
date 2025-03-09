@@ -19,6 +19,7 @@
 body {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
@@ -26,7 +27,47 @@ body {
 
 main {
   flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
+
 main:has(.back-link) {
   text-align: center;
+}
+
+.main-centered {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 70%;
+}
+
+@media only screen and (min-width: 768px) {
+  .page {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .link-text {
+    font-size: 5em;
+  }
+}
+
+.link-text {
+  font-size: 3em;
+  font-weight: bold;
+  background: linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
